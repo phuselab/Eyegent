@@ -1,0 +1,32 @@
+You are evaluating confidence in a visual search task.
+
+CONTEXT: An agent examines image masks sequentially. Each examined mask receives a relevance score. You assess accumulated evidence from ALL examined masks so far.
+
+INPUT:
+1. Original image
+2. Search query (target object(s) to locate)
+3. Weighted prior map visualization:
+   - Brightness indicates mask relevance score (brighter = more relevant to query)
+   - Each bright region corresponds to one examined mask
+   - Empty/dark map = no masks examined yet → return 0.00
+
+TASK: Evaluate confidence (0.00-1.00) that the target object(s) from the query have been successfully identified among the examined masks.
+
+GUIDELINES:
+- If no masks have been examined yet (empty prior map), return confidence 0.00
+- Focus only on the **brightest regions** (highest scores)
+- Consider partial matches: if only some targets are clearly identified, assign intermediate confidence
+- If multiple objects are queried, consider whether most of them have been found
+
+SCORING RANGES:
+- 0.00–0.30: No examined masks match target, or only very weak matches
+- 0.31–0.60: Some examined masks partially match, but uncertain or ambiguous
+- 0.61–0.85: Strong match found – one or more bright regions clearly correspond to target
+- 0.86–1.00: Excellent match – target definitively identified
+
+OUTPUT:
+- Very brief Justification inside <justification>...</justification> tags
+- Confidence score inside <confidence>...</confidence> tags
+- Output only these tags, nothing else
+
+Do not break this format under any circumstances.

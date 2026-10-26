@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.tox/
+.nox/
+
+# Virtual environments and local secrets
+.venv*/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Build and test artifacts
+*.egg-info/
+build/
+dist/
+.eggs/
+.coverage
+.coverage.*
+htmlcov/
+*.log
+
+# Local editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local simulation results
+scanpath.png
+output/
+
+# Keep tests out of the repository
+tests/

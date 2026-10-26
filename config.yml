@@ -1,0 +1,32 @@
+segmentation:
+  prob_threshold: 0.35
+  min_area_ratio: 0.001
+  use_ellipse: false
+  max_masks_per_prompt: 10
+  device: cuda
+llm:
+  model: Qwen/Qwen3-VL-8B-Instruct
+  server_url: http://127.0.0.1:8001/v1
+  api_key: EMPTY
+  max_tokens: 8192
+  temperature: 0.5
+  thinking:
+    enabled: true
+    budgets:
+      orchestrator: 2000
+      examine: 5000
+      judge: 200
+      default: 2000
+inference:
+  max_generations: 10
+  max_duration: 2.9
+  judge_enabled: true
+  termination_confidence_threshold: 0.86
+scanpath:
+  fps: 25
+  kappa: 10
+  threshold: 1.0
+  noise: 7
+  eta: 17
+  ffi: true
+  device: cuda
