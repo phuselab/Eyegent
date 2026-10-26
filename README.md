@@ -71,8 +71,8 @@ In the Eyegent environment, while the VLM server is running:
 
 ```bash
 source .venv/bin/activate
-python simulate.py --image examples/test_image.jpg \
-  --query "What color is the vest of the leftmost kid?" \
+python simulate.py --image examples/ski.jpg \
+  --query "What color is the ski the letters are on?" \
   --output scanpath.png \
   --seed 42
 ```
