@@ -112,7 +112,6 @@ The original VLM request includes the configured thinking fields. If your chosen
   title   = {Eyegent: Visual Attention Orchestration on Concepts},
   journal = {International Journal of Computer Vision},
   year    = {2026},
-  month   = oct,
   volume  = {134},
   number  = {11},
   pages   = {493},
