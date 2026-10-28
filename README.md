@@ -4,9 +4,9 @@
 
 **An Active Vision Agent for Concept-Driven Visual Exploration and Human-Like Scanpath Prediction**
 
-[**Alessandro D’Amelio**](https://github.com/phuselab) · [**Sabrina Patania**](https://github.com/phuselab) · [**Luca Annese**](https://github.com/phuselab) · [**Giuseppe Boccignone**](https://github.com/phuselab)
+[**Alessandro D’Amelio**](https://github.com/aledamelio) · [**Sabrina Patania**](https://github.com/patasab) · [**Luca Annese**](https://github.com/LucaAnnese) · [**Giuseppe Boccignone**](https://github.com/gboccignone)
 
-*PHUSE Lab — University of Milan*
+*University of Milan, University of Milan-Bicocca*
 
 [![Paper](https://img.shields.io/badge/Paper-IJCV%202026-006699?style=for-the-badge&logo=springer&logoColor=white)](https://doi.org/10.1007/s11263-026-03042-4)
 [![DOI](https://img.shields.io/badge/DOI-10.1007%2Fs11263--026--03042--4-blue?style=for-the-badge)](https://doi.org/10.1007/s11263-026-03042-4)
@@ -40,16 +40,9 @@ This repository contains the official implementation accompanying the paper:
 
 Eyegent operates through a recurrent perception cycle orchestrated by a Vision-Language Model (VLM):
 
-```mermaid
-flowchart LR
-    A["🖼️ Input Image\n& Query"] --> B["1. Concept Segmentation\n(CLIPSeg)"]
-    B --> C["2. Attention Map\nConstruction"]
-    C --> D["3. Fixation Selection\n(SDDGM / ScanDDM)"]
-    D --> E["4. Mask Examination\n(Multimodal LLM)"]
-    E --> F{"5. Judge &\nTermination"}
-    F -- "Continue (Update Weights)" --> C
-    F -- "Confident / Budget Reached" --> G["🎯 Output Scanpath"]
-```
+<div align="center">
+  <img src="pipeline.png" alt="Eyegent Architecture and Recurrent Perception-Action Pipeline" width="100%"/>
+</div>
 
 1. **Concept-Based Segmentation (`segment_phrase`)** — A phrase-guided segmentation backend (**CLIPSeg**) generates candidate concept masks across the image.
 2. **Attention Map Construction** — Candidate masks are combined and assigned dynamic weights representing their expected task relevance.

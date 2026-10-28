@@ -34,7 +34,6 @@ htmlcov/
 Thumbs.db
 
 # Local simulation results
-scanpath.png
 output/
 
 # Keep tests out of the repository
